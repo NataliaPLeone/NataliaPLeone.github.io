@@ -1,7 +1,7 @@
 ---
 title: "Meu Primeiro Post"
 date: 2023-04-05
-draft: false
+draft: true
 math: true
 dependencies:
     - /posts/dependencia-marginal/
@@ -17,3 +17,5 @@ Aqui está uma equação: $E = mc^2$
 E uma equação em bloco:
 
 $$\int_{a}^{b} f(x) dx$$
+
+

@@ -10,7 +10,7 @@ summaryLength = 0
 
 
 [params]
-  math = true
+  customCSS = ["css/notes.css"]
 
 
 [languages]

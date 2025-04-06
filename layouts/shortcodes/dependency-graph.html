@@ -1,0 +1,124 @@
+<div id="dependency-graph-container" style="width: 100%; height: 600px;">
+
+<style>
+  .node circle {
+    fill: #d401b1;
+    stroke: #7e0097;
+    stroke-width: 1.5px;
+  }
+
+  .node text {
+    font: 10px sans-serif;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color:#FFF;
+  }
+
+  .node:hover text {
+    opacity: 1;
+    color:#FFF;
+  }
+
+  .link {
+    fill: none;
+    stroke: #e1e1e1;
+    stroke-width: 1.5px;
+    marker-end: url(#arrow);
+  }
+</style>
+
+<svg id="dependency-graph" width="100%" height="600"></svg>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+  const svg = d3.select("#dependency-graph");
+  const width = document.getElementById("dependency-graph-container").clientWidth;
+  const height = 400;
+
+  Promise.all([
+    fetch("/dependency-graph.json").then(res => res.json())
+  ]).then(([data]) => {
+    const nodes = data.nodes;
+    const links = data.edges;
+
+    svg.append("defs").append("marker")
+        .attr("id", "arrow")
+        .attr("viewBox", "0 -5 10 10")
+        .attr("refX", 20) // moved farther from node center
+        .attr("refY", 0)
+        .attr("markerWidth", 8)
+        .attr("markerHeight", 8)
+        .attr("orient", "auto")
+        .append("path")
+        .attr("d", "M0,-5L10,0L0,5")
+        .attr("fill", "#fff"); // high contrast color
+
+
+    const simulation = d3.forceSimulation(nodes)
+      .force("link", d3.forceLink(links).id(d => d.id).distance(80))
+      .force("charge", d3.forceManyBody().strength(-300))
+      .force("center", d3.forceCenter(width / 2, height / 2));
+
+    const link = svg.append("g")
+      .attr("stroke", "#aaa")
+      .selectAll("line")
+      .data(links)
+      .join("line")
+      .attr("class", "link");
+
+    const node = svg.append("g")
+      .selectAll("g")
+      .data(nodes)
+      .join("g")
+      .attr("class", "node")
+      .call(drag(simulation));
+
+    node.append("circle")
+      .attr("r", 10)
+      .on("click", (event, d) => window.location.href = d.id);
+
+    node.append("text")
+      .attr("x", 14)
+      .attr("dy", "0.35em")
+      .text(d => d.label);
+
+
+
+    simulation.on("tick", () => {
+      link
+        .attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x)
+        .attr("y2", d => d.target.y);
+
+      node.attr("transform", d => `translate(${d.x},${d.y})`);
+    });
+
+    function drag(simulation) {
+      function dragstarted(event, d) {
+        if (!event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+      }
+
+      function dragged(event, d) {
+        d.fx = event.x;
+        d.fy = event.y;
+      }
+
+      function dragended(event, d) {
+        if (!event.active) simulation.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+      }
+
+      return d3.drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended);
+    }
+  });
+</script>
+
+</div>

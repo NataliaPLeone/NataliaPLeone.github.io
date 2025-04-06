@@ -4,59 +4,73 @@
   
     
       <url>
-            <loc>http://localhost:1313/posts/dependencia-marginal/</loc>
-            <lastmod>2023-04-05T00:00:00+00:00</lastmod>
+            <loc>http://localhost:37711/anotacoes/</loc>
           </url>
     
   
     
       <url>
-            <loc>http://localhost:1313/posts/meu-primeiro-post/</loc>
-            <lastmod>2023-04-05T00:00:00+00:00</lastmod>
+            <loc>http://localhost:37711/registro/</loc>
           </url>
     
   
     
       <url>
-            <loc>http://localhost:1313/</loc>
-            <lastmod>2023-04-05T00:00:00+00:00</lastmod>
+            <loc>http://localhost:37711/</loc>
             <xhtml:link
               rel="alternate"
               hreflang="en"
-              href="http://localhost:1313/en/"
+              href="http://localhost:37711/en/"
               />
             <xhtml:link
               rel="alternate"
               hreflang="es"
-              href="http://localhost:1313/es/"
+              href="http://localhost:37711/es/"
               />
             <xhtml:link
               rel="alternate"
               hreflang="ja"
-              href="http://localhost:1313/ja/"
+              href="http://localhost:37711/ja/"
               />
             <xhtml:link
               rel="alternate"
               hreflang="zh-hans"
-              href="http://localhost:1313/zh-hans/"
+              href="http://localhost:37711/zh-hans/"
               />
             <xhtml:link
               rel="alternate"
               hreflang="de"
-              href="http://localhost:1313/de/"
+              href="http://localhost:37711/de/"
               />
             <xhtml:link
               rel="alternate"
               hreflang="pt-br"
-              href="http://localhost:1313/"
+              href="http://localhost:37711/"
               />
           </url>
     
   
     
       <url>
-            <loc>http://localhost:1313/posts/</loc>
-            <lastmod>2023-04-05T00:00:00+00:00</lastmod>
+            <loc>http://localhost:37711/anotacoes/estat%C3%ADstica/</loc>
+          </url>
+    
+  
+    
+      <url>
+            <loc>http://localhost:37711/anotacoes/so/introducao/</loc>
+          </url>
+    
+  
+    
+      <url>
+            <loc>http://localhost:37711/grafos/</loc>
+          </url>
+    
+  
+    
+      <url>
+            <loc>http://localhost:37711/anotacoes/so/</loc>
           </url>
     
   

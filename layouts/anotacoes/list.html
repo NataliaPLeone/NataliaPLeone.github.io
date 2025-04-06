@@ -1,0 +1,56 @@
+{{ define "main" }}
+  <header>
+    <link rel="stylesheet" href="/css/custom.css">
+    <h1 class="mt-1 text-4xl font-bold">{{ .Title }}</h1>
+    {{ if .Description }}
+      <div class="mt-1 text-xl text-neutral-600 dark:text-neutral-400">
+        {{ .Description }}
+      </div>
+    {{ end }}
+  </header>
+
+  <!-- Subject Areas Section -->
+  {{ if .Sections }}
+    <section class="mt-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-12 lg:grid-cols-2 px-4">
+        {{ range .Sections.ByTitle }}
+
+          <a href="{{ .RelPermalink }}" class="block p-4 border dark:border-neutral-700 rounded-lg bg-neutral-50 dark:bg-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition duration-200 no-underline">
+
+            <h3 class="mt-0 mb-2 text-xl font-bold">{{ .Title }}</h3>
+            {{ if .Description }}
+              <p class="mb-2 text-neutral-600 dark:text-neutral-400">{{ .Description }}</p>
+            {{ end }}
+            <span class="text-sm text-neutral-500 dark:text-neutral-400">{{ len .Pages }} notas</span>
+          </a>
+        {{ end }}
+      </div>
+        
+    </section>
+  {{ end }}
+
+  <!-- Recent Notes Section -->
+  {{ if .Pages }}
+    <section class="mt-8">
+      <h2 class="text-2xl font-bold">Notas Recentes</h2>
+      <div class="mt-4">
+        {{ range first 5 .Pages.ByDate.Reverse }}
+          <article class="py-4 border-b dark:border-neutral-700">
+            <h3 class="mt-0 mb-1">
+              <a href="{{ .RelPermalink }}" class="font-bold hover:underline">{{ .Title }}</a>
+            </h3>
+            <div class="text-sm text-neutral-500 dark:text-neutral-400">
+              {{ if not .Date.IsZero }}
+                {{ .Date.Format "2 de January de 2006" }}
+              {{ end }}
+            </div>
+            {{ if .Summary }}
+              <p class="mt-2 text-neutral-600 dark:text-neutral-400">{{ .Summary | truncate 150 }}</p>
+            {{ end }}
+          </article>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

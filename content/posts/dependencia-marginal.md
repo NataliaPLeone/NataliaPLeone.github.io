@@ -1,7 +1,7 @@
 ---
 title: "dep marginal"
 date: 2023-04-05
-draft: false
+draft: true
 math: true
 
 ---

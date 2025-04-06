@@ -1,0 +1,128 @@
+
+
+/* Dark mode support */
+:root {
+--card-bg: #fff;
+}
+
+[data-dark-mode] {
+--card-bg: #333;
+}
+
+
+.notes-container {
+margin-top: 2rem;
+}
+
+.subject-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 1rem;
+margin-top: 1rem;
+background-color: #06abb7;
+}
+
+.subject-card {
+background-color: var(--color-neutral-50);
+border-radius: 0.5rem;
+overflow: hidden;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.subject-card:hover {
+transform: translateY(-3px);
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.subject-link {
+display: block;
+padding: 1.5rem;
+color: var(--color-neutral-900);
+text-decoration: none;
+}
+
+.subject-link h3 {
+margin-top: 0;
+margin-bottom: 0.5rem;
+font-size: 1.25rem;
+}
+
+.subject-meta {
+margin-top: 1rem;
+font-size: 0.875rem;
+color: var(--color-neutral-600);
+}
+
+.notes-list {
+list-style: none;
+padding: 0;
+margin: 5rem 0 0;
+}
+
+.note-item {
+border-bottom: 1px solid var(--color-neutral-200);
+padding: 1rem 0;
+}
+
+.note-item:last-child {
+border-bottom: none;
+}
+
+.note-item a {
+display: block;
+text-decoration: none;
+color: var(--color-neutral-900);
+}
+
+.note-item h3 {
+margin: 0 0 0.5rem;
+font-size: 1.125rem;
+}
+
+.note-meta {
+font-size: 0.875rem;
+color: var(--color-neutral-600);
+margin-bottom: 0.5rem;
+}
+
+.note-subject {
+background-color: var(--color-primary-100);
+color: var(--color-primary-800);
+padding: 0.125rem 0.5rem;
+border-radius: 1rem;
+margin-left: 0.5rem;
+font-size: 0.75rem;
+}
+
+
+a:hover{
+    text-decoration: none;
+    color:#d30202;
+}
+
+.card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    background-color: var(--card-bg);
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.2s ease;
+  }
+  
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+padding: 1.5rem;
+}
+
+.card-title {
+margin-top: 0;
+margin-bottom: 0.5rem;
+font-size: 1.25rem;
+}

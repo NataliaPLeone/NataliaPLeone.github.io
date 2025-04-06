@@ -8,4 +8,24 @@
   identifier = "about"
   name = "Sobre"
   url = "/sobre/"
-  weight = 2
+  weight = 4
+
+[[main]]
+  identifier = "blog"
+  name = "Blog"
+  url = "/registro/"
+  weight = 5
+    
+#[[main]]
+#  identifier = "anotacoes"
+#  name = "Anotações"
+#  url = "/anotacoes/"
+#  weight = 2
+
+  
+#[[main]]
+#  identifier = "graph"
+#  name = "Grafos"
+#  url = "/grafos/"
+#  weight = 3
+

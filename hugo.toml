@@ -5,11 +5,17 @@ theme = "congo"
 
 defaultContentLanguage = "pt-br"
 
+[params.list]
+  showSummary = true
+  showDate = true
+  groupByYear = false
 
+[params.term]
+  showSummary = true
+  groupByYear = false
 
 [languages]
   [languages.pt-br]
     languageName = "Português"
     weight = 1
     enableSearch = true
-

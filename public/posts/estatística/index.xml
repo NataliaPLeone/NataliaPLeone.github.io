@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Estatística on Natália</title>
+    <link>http://localhost:1313/posts/estat%C3%ADstica/</link>
+    <description>Recent content in Estatística on Natália</description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <atom:link href="http://localhost:1313/posts/estat%C3%ADstica/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
