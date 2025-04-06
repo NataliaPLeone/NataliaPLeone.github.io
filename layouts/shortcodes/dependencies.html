@@ -1,0 +1,15 @@
+{{ if .Page.Params.dependencies }}
+  <div class="mt-6 p-4 bg-gray-100 rounded-lg">
+    <h3 class="text-lg font-semibold mb-2">Depende de</h3>
+    <ul class="list-disc pl-6">
+      {{ range .Page.Params.dependencies }}
+        {{ $page := site.GetPage . }}
+        {{ if $page }}
+          <li><a class="text-blue-600 underline" href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></li>
+        {{ else }}
+          <li><code>Page not found:</code> {{ . }}</li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}

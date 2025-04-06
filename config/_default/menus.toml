@@ -1,0 +1,11 @@
+[[main]]
+  identifier = "home"
+  name = "Início"
+  url = "/"
+  weight = 1
+
+[[main]]
+  identifier = "about"
+  name = "Sobre"
+  url = "/sobre/"
+  weight = 2

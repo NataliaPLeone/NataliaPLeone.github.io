@@ -1,0 +1,15 @@
+baseURL = 'https://example.org/'
+languageCode = 'pt-br'
+title = 'Natália'
+theme = "congo"
+
+defaultContentLanguage = "pt-br"
+
+
+
+[languages]
+  [languages.pt-br]
+    languageName = "Português"
+    weight = 1
+    enableSearch = true
+
