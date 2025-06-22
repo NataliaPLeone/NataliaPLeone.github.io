@@ -17,7 +17,7 @@ description = """ """
 fuse = true # for searchbox. "JSON" must added to output contents. See [outputs].
 math = true # for introducing $KaTeX$
 useChineseFonts = true 
-postDateFormat = "1-2-2006"
+postDateFormat = "02/01/2006"
 
 
 [menu]
