@@ -1,4 +1,4 @@
-baseURL = 'https://nataliapleone.github.io/'
+baseURL = 'https://nataliapleone.github.io'
 DefaultContentLanguage = "pt-br"
 title = 'Natália'
 theme = "hugo-theme-tokiwa"
